@@ -1,0 +1,47 @@
+<data name="simple_data_service" transports="http https local">
+    <config enableOData="false" id="mysql">
+        <property name="driverClassName">com.mysql.jdbc.Driver</property>
+        <property name="url">jdbc:mysql://localhost:3306/test2</property>
+        <property name="username">root</property>
+        <property name="password">root</property>
+    </config>
+    <query id="getPerson" useConfig="mysql">
+        <sql>SELECT PersonID, LastName, FirstName, Address, City from  Persons</sql>
+        <result element="Entries" rowName="Entry">
+            <element column="PersonID" name="PersonID" xsdType="string"/>
+            <element column="LastName" name="LastName" xsdType="string"/>
+            <element column="FirstName" name="FirstName" xsdType="string"/>
+            <element column="Address" name="Address" xsdType="string"/>
+            <element column="City" name="City" xsdType="string"/>
+        </result>
+    </query>
+    <query id="addPerson" useConfig="mysql">
+        <sql>INSERT INTO Persons(LastName, FirstName, Address, City) values (:LastName, :FirstName, :Address, :City)</sql>
+        <param name="LastName" sqlType="STRING"/>
+        <param name="FirstName" sqlType="STRING"/>
+        <param name="Address" sqlType="STRING"/>
+        <param name="City" sqlType="STRING"/>
+    </query>
+    <operation name="getPerson">
+        <call-query href="getPerson"/>
+    </operation>
+    <operation name="addPerson">
+        <call-query href="addPerson">
+            <with-param name="LastName" query-param="LastName"/>
+            <with-param name="FirstName" query-param="FirstName"/>
+            <with-param name="Address" query-param="Address"/>
+            <with-param name="City" query-param="City"/>
+        </call-query>
+    </operation>
+    <resource method="GET" path="getPerson">
+        <call-query href="getPerson"/>
+    </resource>
+    <resource method="POST" path="addPerson">
+        <call-query href="addPerson">
+            <with-param name="LastName" query-param="LastName"/>
+            <with-param name="FirstName" query-param="FirstName"/>
+            <with-param name="Address" query-param="Address"/>
+            <with-param name="City" query-param="City"/>
+        </call-query>
+    </resource>
+</data>
