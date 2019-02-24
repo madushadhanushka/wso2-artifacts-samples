@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="xslt_trasform_proxy"
+       startOnLoad="true"
+       statistics="disable"
+       trace="disable"
+       transports="http,https">
+    <target>
+        <inSequence>
+            <xslt key="gov:/transform.xslt"/>
+            <respond/>
+        </inSequence>
+    </target>
+    <description/>
+</proxy>

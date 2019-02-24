@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="iterate_proxy"
+       startOnLoad="true"
+       statistics="disable"
+       trace="disable"
+       transports="http,https">
+    <target>
+        <inSequence>
+            <iterate expression="//jsonArray/jsonElement" id="iterate" sequential="true">
+                <target>
+                    <sequence>
+                        <header name="Content-Type" scope="transport" value="application/json"/>
+                        <call>
+                            <endpoint>
+                                <address uri="http://www.mocky.io/v2/5c72989233000065007601bd"/>
+                            </endpoint>
+                        </call>
+                    </sequence>
+                </target>
+            </iterate>
+            <property name="Aggregated_Responses" scope="default">
+                <jsonObject/>
+            </property>
+            <aggregate id="iterate">
+                <completeCondition>
+                    <messageCount max="-1" min="-1"/>
+                </completeCondition>
+                <onComplete xmlns:ns="http://org.apache.synapse/xsd"
+                            enclosingElementProperty="Aggregated_Responses"
+                            expression="$body/*[1]">
+                    <send/>
+                </onComplete>
+            </aggregate>
+        </inSequence>
+    </target>
+    <description/>
+</proxy>

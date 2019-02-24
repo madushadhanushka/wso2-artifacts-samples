@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="clone_proxy"
+       startOnLoad="true"
+       statistics="disable"
+       trace="disable"
+       transports="http,https">
+    <target>
+        <inSequence>
+            <clone>
+                <target>
+                    <endpoint name="v2">
+                        <address format="get" uri="http://www.mocky.io/v2/5c728bca33000067007601b5"/>
+                    </endpoint>
+                </target>
+                <target sequence="test1"/>
+            </clone>
+
+        </inSequence>
+    </target>
+    <description/>
+</proxy>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="dblookup_proxy"
+       startOnLoad="true"
+       statistics="disable"
+       trace="disable"
+       transports="http,https">
+    <target>
+        <inSequence>
+            <dblookup>
+                <connection>
+                    <pool>
+                        <driver>com.mysql.jdbc.Driver</driver>
+                        <url>jdbc:mysql://localhost:3306/tutorials</url>
+                        <user>root</user>
+                        <password>root</password>
+                    </pool>
+                </connection>
+                <statement>
+                    <sql>select * from EMPLOYEES where EmployeeNumber =?</sql>
+                    <parameter type="INTEGER" value="1"/>
+                    <result column="FirstName" name="Name"/>
+                </statement>
+            </dblookup>
+            <log level="custom">
+                <property expression="fn:concat('FirstName: ',get-property('Name'))" name="Name"/>
+            </log>
+            <respond/>
+        </inSequence>
+    </target>
+    <description/>
+</proxy>

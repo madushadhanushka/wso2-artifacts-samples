@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="simple_class_proxy"
+       startOnLoad="true"
+       statistics="disable"
+       trace="disable"
+       transports="http,https">
+<target>
+    <inSequence>
+        <class name="mediator.TestMediator"/>
+        <log>
+            <property expression="get-property('sample')" name="hello"/>
+        </log>
+        <respond/>
+    </inSequence>
+</target>
+<description/>
+</proxy>
