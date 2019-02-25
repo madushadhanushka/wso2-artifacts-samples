@@ -1,0 +1,10 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:q1="http://www.wso2.org/hello"
+           xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://www.wso2.org/types"
+           attributeFormDefault="qualified" elementFormDefault="qualified"
+           targetNamespace="http://www.wso2.org/types">
+    <xs:import namespace="http://www.wso2.org/hello"
+               schemaLocation="hello.xsd" />
+    <xs:element name="greet" type="q1:hello">
+    </xs:element>
+</xs:schema>

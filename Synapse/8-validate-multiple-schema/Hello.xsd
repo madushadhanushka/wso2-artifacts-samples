@@ -1,0 +1,17 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://www.wso2.org/hello"
+           attributeFormDefault="qualified" elementFormDefault="qualified"
+           targetNamespace="http://www.wso2.org/hello">
+    <xs:element name="hello" type="ns:hello"></xs:element>
+    <xs:complexType name="hello">
+        <xs:sequence>
+            <xs:element minOccurs="1" name="name" >
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="10" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

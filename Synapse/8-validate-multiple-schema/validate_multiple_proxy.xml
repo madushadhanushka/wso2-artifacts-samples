@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="validate_multiple_proxy"
+       startOnLoad="true"
+       statistics="disable"
+       trace="disable"
+       transports="http,https">
+    <target>
+        <inSequence>
+            <log level="full">
+                <property name="Message" value="Inside Insequance"/>
+            </log>
+            <validate cache-schema="true">
+                <schema key="gov:/custom/HelloSchema.xsd"/>
+                <resource key="gov:/custom/xsd/Hello.xsd" location="hello.xsd"/>
+                <on-fail>
+                    <makefault version="soap11">
+                        <code xmlns:soap11Env="http://schemas.xmlsoap.org/soap/envelope/"
+                              value="soap11Env:VersionMismatch"/>
+                        <reason value="Invalid Request!!!"/>
+                        <role/>
+                    </makefault>
+                    <log level="full"/>
+                    <property name="RESPONSE" scope="default" type="STRING" value="true"/>
+                    <header action="remove" name="To" scope="default"/>
+                    <send/>
+                </on-fail>
+            </validate>
+            <respond/>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </target>
+    <description/>
+</proxy>
