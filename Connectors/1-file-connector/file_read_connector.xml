@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="file_read_connector"
+       startOnLoad="true"
+       statistics="disable"
+       trace="disable"
+       transports="http,https">
+    <target>
+        <inSequence>
+            <property name="FName" scope="default" type="STRING" value="test.xml"/>
+            <property expression="fn:concat('file://home/in/' , get-property('default', 'FName'))"
+                      name="sourceURL"/>
+            <fileconnector.read>
+                <source>{$ctx:sourceURL}</source>
+                <setTimeout>10000</setTimeout>
+                <setPassiveMode>true</setPassiveMode>
+                <setSoTimeout>10000</setSoTimeout>
+                <setUserDirIsRoot>false</setUserDirIsRoot>
+                <setStrictHostKeyChecking>no</setStrictHostKeyChecking>
+            </fileconnector.read>
+            <log level="full"/>
+        </inSequence>
+    </target>
+    <description/>
+</proxy>
