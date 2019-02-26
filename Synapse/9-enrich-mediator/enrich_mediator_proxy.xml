@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="enrich_mediator_proxy"
+       startOnLoad="true"
+       statistics="disable"
+       trace="disable"
+       transports="http,https">
+    <target>
+        <inSequence>
+            <property name="VOLUME" value="100"/>
+            <enrich>
+                <source clone="true" type="inline">
+                    <volume xmlns=""/>
+                </source>
+                <target action="child" xpath="//orders/order[symbol/text() = 'MSFT']"/>
+            </enrich>
+            <enrich>
+                <source clone="true" property="VOLUME" type="property"/>
+                <target xpath="//orders/order[symbol/text() = 'MSFT']/volume"/>
+            </enrich>
+            <log level="full"/>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+    </target>
+    <description/>
+</proxy>
