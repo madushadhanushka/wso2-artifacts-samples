@@ -1,7 +1,7 @@
 1. Create table EMPLOYEES
    <br>`CREATE TABLE EMPLOYEES (EmployeeNumber int(11) NOT NULL, FirstName varchar(255) NOT NULL, LastName varchar(255) DEFAULT NULL, Email varchar(255) DEFAULT NULL, JobTitle varchar(255) DEFAULT NULL, OfficeCode int(11) NOT NULL, PRIMARY KEY (EmployeeNumber,OfficeCode), CONSTRAINT employees_ibfk_1 FOREIGN KEY (OfficeCode) REFERENCES OFFICES (OfficeCode));`
 2. Add [request_box](request_box.xml) configuration into the DSS.
-3. Evoke the request with following payload.
+3. Evoke the request with following payload using "try it".
 ```
 <body>
    <p:request_box xmlns:p="http://ws.wso2.org/dataservice">

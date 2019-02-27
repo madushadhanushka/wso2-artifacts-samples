@@ -1,5 +1,13 @@
-1. Add [iterate-mediator-proxy.xml](iterate-mediator-proxy.xml) into the proxy service.
-2. Evoke the service with following JSON payload.
+1. Create new backend service with mocky with following payload.
+```
+{
+    "Name": "Name123",
+    "Status": "Accepted"
+}
+```
+2. Replace endpoint in line #16 in [iterate-mediator-proxy.xml](iterate-mediator-proxy.xml) with new mocky endpoint.
+3. Add [iterate-mediator-proxy.xml](iterate-mediator-proxy.xml) into the proxy service.
+4. Evoke the service with following JSON payload by calling to "https://localhost:8243/services/iterate_proxy".
 ```
 [{
     "Name": "Name1",

@@ -1,5 +1,5 @@
 <proxy xmlns="http://ws.apache.org/ns/synapse"
-       name="AggregateMessageProxy" transports="https,http" statistics="disable" trace="disable" startOnLoad="true"> <target>
+       name="aggregate_proxy" transports="https,http" statistics="disable" trace="disable" startOnLoad="true"> <target>
     <inSequence>
         <property name="enclosing_element" scope="default">
             <result xmlns=""/>

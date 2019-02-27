@@ -5,4 +5,5 @@
   <br>`INSERT INTO EMPLOYEES VALUES (2,"Jane","Stewart","jane@office2.com","Head of Sales",2);`
   <br>`INSERT INTO EMPLOYEES VALUES (3,"David","Green","david@office1.com","Manager",1);`
 3. Add [dblookup_mediator_proxy.xml](dblookup_mediator_proxy.xml) into the proxy service.
-4. Evoke the service.
+4. Evoke the service with
+<br>`curl -H 'Accept: application/json' -X GET https://localhost:8243/services/dblookup_proxy`

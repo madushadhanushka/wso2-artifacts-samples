@@ -11,7 +11,7 @@
 <br>`INSERT INTO EMPLOYEES VALUES (3,"David","Green","david@office1.com","Manager",1);`
 5. 
 - For XML output Add [nested_query_xml](nested_query_xml.xml) into the DSS services.
-<br> Evoke the XML service with
+<br> Evoke the XML service with following body
 ```
 <body>
       <p:listOfficeSQLOP xmlns:p="http://ws.wso2.org/dataservice">

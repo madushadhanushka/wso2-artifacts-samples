@@ -1,6 +1,6 @@
 1. Upload [transform.xslt](transform.xslt) file into the "gov:/transform.xslt"
 2. Add [xslt_transform_proxy.xml](xslt_transform_proxy.xml) into the proxy service
-3. Evoke the service with the following payload
+3. Evoke the service with the following payload with url "https://localhost:8243/services/xslt_trasform_proxy"
 ```
 { "ISOMessage": 
     { "data": 

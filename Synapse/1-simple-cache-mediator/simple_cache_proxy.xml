@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <proxy xmlns="http://ws.apache.org/ns/synapse"
-       name="simple-cache-proxy"
+       name="simple_cache_proxy"
        startOnLoad="true"
        statistics="disable"
        trace="disable"

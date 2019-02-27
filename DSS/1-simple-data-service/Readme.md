@@ -12,3 +12,4 @@
 3. Insert Sample values to Persons table
 <br>`INSERT INTO Persons(LastName, FirstName, Address, City) values("LnameUser1","FnameUser1","Address1","City1");`
 4. Add [dss1.xml](dss1.xml) into the DSS service.
+5. Evoke the service with "try it" tool.
