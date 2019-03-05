@@ -10,12 +10,12 @@
             <log>
                 <property name="testing" value="Request arrives in to InSequence"/>
             </log>
-            <cache collector="false" timeout="30">
+            <cache collector="false" timeout="20">
                 <onCacheHit>
                     <log level="custom">
-                        <property name="testing Hit" value="Cache Hit"/>
+                        <property name="testing" value="Cache Hit"/>
                     </log>
-                    <loopback/>
+                    <respond/>
                 </onCacheHit>
                 <protocol type="HTTP">
                     <methods>*</methods>
