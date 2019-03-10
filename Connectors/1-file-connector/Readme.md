@@ -15,6 +15,6 @@
 4. Create a file [test.xml](test.xml) to read as in "/home/in/test.xml"
 5. Add [file_read_connector.xml](file_read_connector.xml) into the proxy service.
 6. Evoke the service with
-<br>`curl -H 'Accept: application/json' -X GET https://localhost:8243/services/file_read_connector`
+<br>`curl -H 'Accept: application/json' -X GET https://localhost:8243/services/file_read_connector -k`
 
 <i>In case of SSL error while using curl use -k option with curl command</i>

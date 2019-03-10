@@ -27,7 +27,7 @@ curl -X POST \
       <xs:Address xmlns:xs="http://ws.wso2.org/dataservice">Lanka</xs:Address>
       <xs:City xmlns:xs="http://ws.wso2.org/dataservice">Colombo</xs:City>
    </p:addPerson>
-</body>'
+</body> -k'
 ```
 - List the person by
 
@@ -44,6 +44,6 @@ curl -X GET \
       <xs:Address xmlns:xs="http://ws.wso2.org/dataservice">Lanka</xs:Address>
       <xs:City xmlns:xs="http://ws.wso2.org/dataservice">Colombo</xs:City>
    </p:addPerson>
-</body>'
+</body> -k'
 ```
 <i>In case of SSL error while using curl, use -k option with curl command</i>

@@ -16,7 +16,7 @@ curl -X POST \
   -H 'content-type: text/xml' \
   -d '<p:greet xmlns:p="http://www.wso2.org/types" xmlns:q="http://www.wso2.org/hello">
         <q:name>hello</q:name>
-</p:greet>'
+</p:greet>' -k
 ```
 
 - Evoke with following payload for invalid case.
@@ -33,7 +33,7 @@ curl -X POST \
   -H 'content-type: text/xml' \
   -d '<p:greet xmlns:p="http://www.wso2.org/types" xmlns:q="http://www.wso2.org/hello">
         <q:name></q:name>
-</p:greet>'
+</p:greet>' -k
 ```
 
 <i>In case of SSL error while using curl, use -k option with curl command</i>

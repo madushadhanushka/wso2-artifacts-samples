@@ -6,6 +6,6 @@
   <br>`INSERT INTO EMPLOYEES VALUES (3,"David","Green","david@office1.com","Manager",1);`
 3. Add [dblookup_mediator_proxy.xml](dblookup_mediator_proxy.xml) into the proxy service.
 4. Evoke the service with
-<br>`curl -H 'Accept: application/json' -X GET https://localhost:8243/services/dblookup_proxy`
+<br>`curl -H 'Accept: application/json' -X GET https://localhost:8243/services/dblookup_proxy -k`
 
 This will print "Name = FirstName: John" in carbon logs.

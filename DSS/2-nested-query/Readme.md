@@ -31,11 +31,11 @@ curl -X POST \
          <!--Exactly 1 occurrence-->
          <xs:OfficeCode xmlns:xs="http://ws.wso2.org/dataservice">1</xs:OfficeCode>
       </p:listOfficeSQLOP>
-'
+' -k
 ```
    
 - For JSON output Add [nested_query_json](nested_query_json.xml) into the DSS service
 <br>Evoke JSON service with 
-<br>`curl -H 'Accept: application/json' -X GET http://localhost:8280/services/nested_query_json.SOAP12Endpoint/offices/1`
+<br>`curl -H 'Accept: application/json' -X GET http://localhost:8280/services/nested_query_json.SOAP12Endpoint/offices/1 -k`
 
 <i>In case of SSL error while using curl, use -k option with curl command</i>

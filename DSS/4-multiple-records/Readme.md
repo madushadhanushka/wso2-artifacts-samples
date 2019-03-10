@@ -72,7 +72,7 @@ curl -X POST \
          <!--Exactly 1 occurrence-->
          <xs:Officecode xmlns:xs="http://ws.wso2.org/dataservice">01</xs:Officecode>
       </addEmployeeOp>
-   </p:addEmployeeOp_batch_req>'
+   </p:addEmployeeOp_batch_req>' -k
 ```
 
 <i>In case of SSL error while using curl, use -k option with curl command</i>

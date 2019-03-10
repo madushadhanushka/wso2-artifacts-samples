@@ -35,6 +35,6 @@ curl -X POST \
   <symbol>MSFT</symbol>
   <comment>ref 20088398289</comment>
  </order>
-</orders>'
+</orders>' -k
 ```
 <i>In case of SSL error while using curl, use -k option with curl command</i>

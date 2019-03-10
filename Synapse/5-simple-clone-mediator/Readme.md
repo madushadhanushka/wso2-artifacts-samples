@@ -6,6 +6,6 @@
 ```
 2. Add [clone_mediator_proxy.xml](clone_mediator_proxy.xml) into the proxy service.
 3. Evoke the proxy service with
-<br>`curl -H 'Accept: application/json' -X GET https://localhost:8243/services/clone_proxy`
+<br>`curl -H 'Accept: application/json' -X GET https://localhost:8243/services/clone_proxy -k`
 
 <i>In case of SSL error while using curl, use -k option with curl command</i>
