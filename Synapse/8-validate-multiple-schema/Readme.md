@@ -8,9 +8,32 @@
         <q:name>hello</q:name>
 </p:greet>
 ```
+
+```
+curl -X POST \
+  http://localhost:8280/services/MyValidateProxy \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: text/xml' \
+  -d '<p:greet xmlns:p="http://www.wso2.org/types" xmlns:q="http://www.wso2.org/hello">
+        <q:name>hello</q:name>
+</p:greet>'
+```
+
 - Evoke with following payload for invalid case.
 ```
 <p:greet xmlns:p="http://www.wso2.org/types" xmlns:q="http://www.wso2.org/hello">
         <q:name></q:name>
 </p:greet>
 ```
+
+```
+curl -X POST \
+  http://localhost:8280/services/MyValidateProxy \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: text/xml' \
+  -d '<p:greet xmlns:p="http://www.wso2.org/types" xmlns:q="http://www.wso2.org/hello">
+        <q:name></q:name>
+</p:greet>'
+```
+
+<i>In case of SSL error while using curl, use -k option with curl command</i>

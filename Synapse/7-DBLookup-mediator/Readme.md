@@ -7,3 +7,5 @@
 3. Add [dblookup_mediator_proxy.xml](dblookup_mediator_proxy.xml) into the proxy service.
 4. Evoke the service with
 <br>`curl -H 'Accept: application/json' -X GET https://localhost:8243/services/dblookup_proxy`
+
+This will print "Name = FirstName: John" in carbon logs.

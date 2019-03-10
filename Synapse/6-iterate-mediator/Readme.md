@@ -22,3 +22,23 @@
     "Id": 3
 }]
 ```
+<i>In case of SSL error while using curl, use -k option with curl command</i>
+
+```
+curl -X POST \
+  https://localhost:8243/services/iterate_proxy \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -d '[{
+    "Name": "Name1",
+    "Id": 1
+},
+{
+    "Name": "Name2",
+    "Id": 2
+},
+{
+    "Name": "Name3",
+    "Id": 3
+}]'
+```

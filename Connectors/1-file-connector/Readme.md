@@ -17,3 +17,4 @@
 6. Evoke the service with
 <br>`curl -H 'Accept: application/json' -X GET https://localhost:8243/services/file_read_connector`
 
+<i>In case of SSL error while using curl use -k option with curl command</i>

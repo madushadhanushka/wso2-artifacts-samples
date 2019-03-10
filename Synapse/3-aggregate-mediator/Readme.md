@@ -14,3 +14,5 @@
 3. Add [aggregate_proxy](aggregate_proxy.xml) into the proxy service.
 4. Evoke the proxy service with
 <br>`curl -H 'Accept: application/json' -X GET https://localhost:8243/services/aggregate_proxy`
+
+<i>In case of SSL error while using curl, use -k option with curl command</i>
