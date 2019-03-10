@@ -11,7 +11,7 @@
 
 ```
 curl -X POST \
-  http://localhost:8280/services/MyValidateProxy \
+  http://localhost:8280/services/validate_multiple_proxy \
   -H 'cache-control: no-cache' \
   -H 'content-type: text/xml' \
   -d '<p:greet xmlns:p="http://www.wso2.org/types" xmlns:q="http://www.wso2.org/hello">
@@ -28,7 +28,7 @@ curl -X POST \
 
 ```
 curl -X POST \
-  http://localhost:8280/services/MyValidateProxy \
+  http://localhost:8280/services/validate_multiple_proxy \
   -H 'cache-control: no-cache' \
   -H 'content-type: text/xml' \
   -d '<p:greet xmlns:p="http://www.wso2.org/types" xmlns:q="http://www.wso2.org/hello">

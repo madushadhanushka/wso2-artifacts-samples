@@ -19,7 +19,7 @@
 
 ```
 curl -X POST \
-  https://localhost:8243/services/enrich_proxy \
+  https://localhost:8243/services/enrich_mediator_proxy \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/xml' \
   -d '<orders>
