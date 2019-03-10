@@ -5,8 +5,9 @@ Following are the list of samples available in this repository.
 ### [DSS](DSS)
 1. [Multiple Record](DSS/4-multiple-records)
 2. [Nested Query](DSS/2-nested-query)
-3. [Request Box](DSS/3-request-box)
-4. [Simple Data Service](DSS/1-simple-data-service)
+3. [Odata Service](DSS/5-odata)
+4. [Request Box](DSS/3-request-box)
+5. [Simple Data Service](DSS/1-simple-data-service)
 
 ### [Synapse](Synapse)
 1. [Aggregate Mediator](Synapse/3-aggregate-mediator)

@@ -1,0 +1,8 @@
+<data name="odata_service" transports="http https local">
+    <config enableOData="true" id="mysql">
+        <property name="driverClassName">com.mysql.jdbc.Driver</property>
+        <property name="url">jdbc:mysql://localhost:3306/tutorials</property>
+        <property name="username">root</property>
+        <property name="password">root</property>
+    </config>
+</data>
