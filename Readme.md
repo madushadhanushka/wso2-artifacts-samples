@@ -21,6 +21,9 @@ Following are the list of samples available in this repository.
 9. [XSLT mediator](Synapse/2-xslt-transform-mediator)
 ### [Connectors](Connectors)
 1. [File Connectors](Connectors/1-file-connector)
+
+### [Transport](Transport)
+1. [JMS pub sub](Transport/1-jms-pub-sub)
 ### Useful resource links
 - [MySQL JDBC driver](https://dev.mysql.com/downloads/connector/j/)
 - [Oracle JDBC driver](https://www.oracle.com/technetwork/database/application-development/jdbc/downloads/index.html)

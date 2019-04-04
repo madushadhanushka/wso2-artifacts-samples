@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="subscriber_proxy2"
+       startOnLoad="true"
+       statistics="disable"
+       trace="disable"
+       transports="jms">
+    <target>
+        <inSequence>
+            <property name="OUT_ONLY" value="true"/>
+            <log level="custom">
+                <property name="Subscriber2" value="I am Subscriber2"/>
+            </log>
+            <log level="full"/>
+            <drop/>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+    </target>
+    <parameter name="transport.jms.DestinationType">topic</parameter>
+    <parameter name="transport.jms.Destination">SimpleStockQuoteService</parameter>
+    <parameter name="transport.jms.ContentType">
+        <rules xmlns="">
+            <jmsProperty>contentType</jmsProperty>
+            <default>application/xml</default>
+        </rules>
+    </parameter>
+    <parameter name="transport.jms.ConnectionFactory">myTopicConnectionFactory</parameter>
+    <description/>
+</proxy>
