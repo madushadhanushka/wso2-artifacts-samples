@@ -42,9 +42,9 @@
 <transportSender name="jms" class="org.apache.axis2.transport.jms.JMSSender"/>
 ```
 
-6. Start ActiveMQ server by running `./activemq` on <ACTIVEMQ_HOME>/bin
+6. Start ActiveMQ server by running `./activemq` on <ACTIVEMQ_HOME>/bin (Run ActiveMQ with `./activemq console` to check the logs).
 7. Start EI server by `./integrator.sh` on <EI_HOME>/bin
 8. Add [producer_proxy](producer_proxy.xml), [subscriber1](subscriber_proxy1.xml), [subscriber2](subscriber_proxy2.xml) into the proxy services.
-9. Evoke the service by running `ant stockquote -Daddurl=http://localhost:8280/services/producer_proxy -Dmode=placeorder -Dsymbol=WSO2`
+9. Evoke the service by running `ant stockquote -Daddurl=http://localhost:8280/services/producer_proxy -Dmode=placeorder -Dsymbol=WSO2` in <EI_HOME>/samples/axis2Client folder.
 
 You can log in into the ActiveMQ console by [http://localhost:8161](http://localhost:8161)
