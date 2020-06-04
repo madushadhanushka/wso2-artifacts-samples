@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="handler_test_proxy"
+       startOnLoad="true"
+       statistics="disable"
+       trace="disable"
+       transports="http,https">
+    <target>
+        <inSequence>
+            <log level="custom">
+                <property name="Log" value="Hit the proxy"/>
+            </log>
+            <respond/>
+        </inSequence>
+    </target>
+    <description/>
+</proxy>
