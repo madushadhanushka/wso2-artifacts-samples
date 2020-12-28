@@ -17,21 +17,21 @@
 <transportReceiver name="jms1" class="org.apache.axis2.transport.jms.JMSListener">
        <parameter name="myTopicConnectionFactory" locked="false">
            <parameter name="java.naming.factory.initial" locked="false">org.apache.activemq.jndi.ActiveMQInitialContextFactory</parameter>
-           <parameter name="java.naming.provider.url" locked="false">tcp://localhost:61617</parameter>
+           <parameter name="java.naming.provider.url" locked="false">tcp://localhost:61616</parameter>
            <parameter name="transport.jms.ConnectionFactoryJNDIName" locked="false">TopicConnectionFactory</parameter>
             <parameter name="transport.jms.ConnectionFactoryType" locked="false">topic</parameter>
        </parameter>
   
        <parameter name="myQueueConnectionFactory" locked="false">
            <parameter name="java.naming.factory.initial" locked="false">org.apache.activemq.jndi.ActiveMQInitialContextFactory</parameter>
-           <parameter name="java.naming.provider.url" locked="false">tcp://localhost:61617</parameter>
+           <parameter name="java.naming.provider.url" locked="false">tcp://localhost:61616</parameter>
            <parameter name="transport.jms.ConnectionFactoryJNDIName" locked="false">QueueConnectionFactory</parameter>
             <parameter name="transport.jms.ConnectionFactoryType" locked="false">queue</parameter>
        </parameter>
   
        <parameter name="default" locked="false">
            <parameter name="java.naming.factory.initial" locked="false">org.apache.activemq.jndi.ActiveMQInitialContextFactory</parameter>
-           <parameter name="java.naming.provider.url" locked="false">tcp://localhost:61617</parameter>
+           <parameter name="java.naming.provider.url" locked="false">tcp://localhost:61616</parameter>
            <parameter name="transport.jms.ConnectionFactoryJNDIName" locked="false">QueueConnectionFactory</parameter>
             <parameter name="transport.jms.ConnectionFactoryType" locked="false">queue</parameter>
        </parameter>
