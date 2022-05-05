@@ -16,5 +16,6 @@
   <transportSender name="rabbitmq" class="org.apache.axis2.transport.rabbitmq.RabbitMQSender"/>
   ```
 3. Add [amqp-client-5.7.0.jar](https://www.rabbitmq.com/java-client.html) into the <EI HOME>/lib folder
-3. Add proxy service [sendMessage.xml](sendMessage.xml) on EI
-4. Invoke the proxy service
+4. Add proxy service [sendMessage.xml](sendMessage.xml) on EI
+5. Create exchange and binding to rout request
+6. Invoke the proxy service
