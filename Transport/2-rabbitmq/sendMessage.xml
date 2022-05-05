@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="sendMessage"
+       transports="http https"
+       startOnLoad="true">
+   <description/>
+   <target>
+      <inSequence>
+         <property name="OUT_ONLY" value="true"/>
+         <property name="FORCE_SC_ACCEPTED" value="true" scope="axis2"/>
+         <log level="custom">
+            <property name="MessageFlow"
+                      value="======= 1.0 RMQ TEST PUBLISHER 1 - Send to RMQ queue without username ======="/>
+         </log>
+         <send>
+            <endpoint>
+               <address uri="rabbitmq:/AMQPProxy?rabbitmq.server.host.name=localhost&amp;rabbitmq.server.port=5672&amp;rabbitmq.server.user.name=guest&amp;rabbitmq.server.password=guest&amp;rabbitmq.exchange.name=headerexchange2&amp;rabbitmq.queue.routing.key=preview.entity.t0400145j5vr&amp;rabbitmq.message.type=create.order"/>
+            </endpoint>
+         </send>
+      </inSequence>
+      <outSequence>
+         <send/>
+      </outSequence>
+   </target>
+</proxy>
